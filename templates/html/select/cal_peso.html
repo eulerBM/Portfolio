@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular</title>
+    <link rel="stylesheet" href="{% static 'css/style_peso.css' %}">
+</head>
+<body>
+
+
+<!-- Formulario -->
+
+<div class="login-container">
+
+	<form action="" class="form-login" method="post">
+
+        {% csrf_token %} 
+
+		<label for="login-input-user" class="login__label">
+			Altura (ex.: 1,70)
+		</label>
+
+		<input maxlength="4"  name="altura" id="login-input-user" class="login__input" type="tel" placeholder="Altura..." required />
+
+		<label for="login-input-password" class="login__label">
+			Peso (ex.: 69,2)
+		</label>
+		<input maxlength="4" name="peso" id="login-input-password" class="login__input" type="tel"  placeholder="Peso..." required />
+
+		<button type="submit" class="login__submit" >Calcular</button>
+        
+    
+        <button disabled  class="resultado">{{ resultado }} 
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %} id="resultado_" >
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+        </button>
+
+
+
+	</form>
+
+
+    
+
+</div>
+
+<a href="{% url 'home' %}"> <button id="voltar" class="button-85"  >Voltar</button> </a>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+</body>
+</html>

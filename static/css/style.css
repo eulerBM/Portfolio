@@ -1,0 +1,36 @@
+body {
+    background-color: aqua;
+}
+
+.container {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+  
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 30px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  
+}
+
+.container_2 {
+    margin: 23px;
+    
+    
+  }
+
+.descricao {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+
