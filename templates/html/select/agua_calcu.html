@@ -1,14 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agua no dia</title>
+    <link rel="stylesheet" href="{% static 'css/style_agua.css' %}">
 </head>
 <body>
-
-    <h1>Agua calcular</h1>
     
+    <div class="login-box">
+        <h2>Agua por dia</h2>
+        <form method="post" >
+            {% csrf_token %} 
+          <div class="user-box">
+            <input type="tel" name="calcular" required>
+            <label>Seu peso ?</label>
+          </div>
+         
+
+          <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+          <button class="noselect" type="submit" ><span>Calcular</span></button>
+
+
+          </a>
+        </form>
+    </div>
+
+    {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %} class="resultado" >
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+
 </body>
 </html>

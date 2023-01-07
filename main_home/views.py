@@ -10,10 +10,11 @@ def home (request): # Pagina principal
 
         banco = post.objects.all()
 
-      
 
-    
         return render (request,'html/home_page.html',{'banco':banco})
+    
+    return render (request,'html/home_page.html')
+    
 
 
 
@@ -63,4 +64,19 @@ def calcular_imc(request): # Calcular IMC
 
         
 
-# Create your views here.
+def calcular_agua(request): # Calcular quantos de agua que vc deve beber
+
+    if request.method == 'POST':
+
+        get_box = eval(request.POST['calcular'])
+
+        resultado = str((get_box * 35) / 100)
+
+        
+
+        messages.info(request,f"Voce deve beber { resultado.replace('.',',') } Litros por dia")
+        return render (request,'html/select/agua_calcu.html')
+
+    if request.method == 'GET':
+
+        return render (request,'html/select/agua_calcu.html')
