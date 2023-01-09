@@ -25,9 +25,17 @@ def home (request): # Pagina principal
             return render (request,'html/home_page.html',{'banco':banco})
 
         else: # se vier preenchido vai no banco, filtra e mostre
-            search = post.objects.filter(titulo=get_search)
+            search = post.objects.filter(titulo__icontains=get_search)
 
             return render (request,'html/home_page.html', {'banco':search})
+
+
+def contato(request): # contaTo do criador do site
+    if request.method == 'GET':
+
+        return render (request,'html/contato.html')
+
+   
 
       
 def calcular_imc(request): # Calcular IMC

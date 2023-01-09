@@ -20,6 +20,7 @@ from main_home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('contato/', views.contato, name='contato' ),
     path('icm/', views.calcular_imc, name='calcular_icm' ),
-    path('agua/', views.calcular_agua, name='calcular_agua')
+    path('agua/', views.calcular_agua, name='calcular_agua'),
 ]

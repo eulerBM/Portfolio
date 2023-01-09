@@ -103,3 +103,35 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
+#container_center {
+  position: absolute;
+  top: 28%;
+  left: 20%;
+}
+
+.links {
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#photo {
+  border-radius: 50%;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+  width: 150px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
